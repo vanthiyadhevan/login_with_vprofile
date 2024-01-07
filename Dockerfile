@@ -1,4 +1,4 @@
-FROM tomcat:9-jre11
+FROM tomcat:9-jre11 AS BUILD_IMAGE
 
 RUN rm -rf /usr/local/tomcat/webapps/*
 
