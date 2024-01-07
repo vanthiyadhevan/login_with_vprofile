@@ -9,11 +9,11 @@ pipeline {
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "localhost:8081"
-        NEXUS_REPOSITORY = "vprofile-release"
-        NEXUS_REPO_ID    = "vprofile-release"
-        NEXUS_CREDENTIAL_ID = "nexuslogin"
-        ARTVERSION = "${env.BUILD_ID}"
+        NEXUS_URL = "192.168.0.155:8081/"
+        NEXUS_REPOSITORY = "vprofile-repo"
+        NEXUS_REPO_ID    = "vprofile-repo"
+        NEXUS_CREDENTIAL_ID = "nexus3"
+        ARTVERSION = "${env.BUILD_ID}-${env.TIMESTAMP}"
     }
 	
     stages{
@@ -31,14 +31,7 @@ pipeline {
         }
         stage("Publish to Nexus Repository Manager") {
             steps {
-                script {
-                    pom = readMavenPom file: "pom.xml";
-                    filesByGlob = findFiles(glob: "target/*.${pom.packaging}");
-                    echo "${filesByGlob[0].name} ${filesByGlob[0].path} ${filesByGlob[0].directory} ${filesByGlob[0].length} ${filesByGlob[0].lastModified}"
-                    artifactPath = filesByGlob[0].path;
-                    artifactExists = fileExists artifactPath;
-                    if(artifactExists) {
-                        echo "*** File: ${artifactPath}, group: ${pom.groupId}, packaging: ${pom.packaging}, version ${pom.version} ARTVERSION";
+                
                         nexusArtifactUploader(
                             nexusVersion: NEXUS_VERSION,
                             protocol: NEXUS_PROTOCOL,
@@ -48,14 +41,10 @@ pipeline {
                             repository: NEXUS_REPOSITORY,
                             credentialsId: NEXUS_CREDENTIAL_ID,
                             artifacts: [
-                                [artifactId: pom.artifactId,
+                                [artifactId: 'vproapp',
                                 classifier: '',
-                                file: artifactPath,
-                                type: pom.packaging],
-                                [artifactId: pom.artifactId,
-                                classifier: '',
-                                file: "pom.xml",
-                                type: "pom"]
+                                file: 'target/vprofile-v2.war',
+                                type: 'war']
                             ]
                         );
                     } 
