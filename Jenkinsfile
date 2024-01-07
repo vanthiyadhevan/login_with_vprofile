@@ -1,24 +1,18 @@
 pipeline {
-    
-	agent any
-/*	
-	tools {
-        maven "Jenkins_maven3"
-    }
-*/	
+    agent any
+
     environment {
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
         NEXUS_URL = "192.168.0.155:8081/"
         NEXUS_REPOSITORY = "vprofile-repo"
-        NEXUS_REPO_ID    = "vprofile-repo"
+        NEXUS_REPO_ID = "vprofile-repo"
         NEXUS_CREDENTIAL_ID = "nexus3"
         ARTVERSION = "${env.BUILD_ID}-${env.TIMESTAMP}"
     }
-	
-    stages{
-        
-        stage('BUILD'){
+
+    stages {
+        stage('BUILD') {
             steps {
                 sh 'mvn clean install -DskipTests'
             }
@@ -31,7 +25,10 @@ pipeline {
         }
         stage("Publish to Nexus Repository Manager") {
             steps {
-                
+                script {
+                    def artifactPath = findFiles(glob: 'target/vprofile-v2.war')[0]
+
+                    if (artifactPath) {
                         nexusArtifactUploader(
                             nexusVersion: NEXUS_VERSION,
                             protocol: NEXUS_PROTOCOL,
@@ -46,17 +43,12 @@ pipeline {
                                 file: 'target/vprofile-v2.war',
                                 type: 'war']
                             ]
-                        );
-                    } 
-		    else {
-                        error "*** File: ${artifactPath}, could not be found";
+                        )
+                    } else {
+                        error "*** File: ${artifactPath}, could not be found"
                     }
                 }
             }
         }
-
-
     }
-
-
 }
