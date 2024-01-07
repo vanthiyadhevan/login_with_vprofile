@@ -26,6 +26,7 @@ pipeline {
         stage("Publish to Nexus Repository Manager") {
             steps {
                 script {
+                    pom = readMavenPom file: 'pom.xml'
                     def artifactPath = findFiles(glob: 'target/vprofile-v2.war')[0]
 
                     if (artifactPath) {
