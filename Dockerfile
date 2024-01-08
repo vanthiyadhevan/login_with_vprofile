@@ -11,7 +11,7 @@ ARG WAR_FILE
 COPY ${WAR_FILE} /usr/local/tomcat/webapps/ROOT.war
 
 # Expose the default Tomcat port
-EXPOSE 8084
+EXPOSE 8080
 
 # Command to run when the container starts
 CMD ["catalina.sh", "run"]
