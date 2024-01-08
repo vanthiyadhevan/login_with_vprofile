@@ -1,16 +1,17 @@
+# Use the official Tomcat image as the base image
 FROM tomcat:8.5-jre8-alpine
 
-# Set the working directory in the container
+# Set the working directory to the Tomcat webapps directory
 WORKDIR /usr/local/tomcat/webapps
 
-# Copy the artifact from Nexus to the container
-COPY http://192.168.1.20:8081/repository/vprofile-docker/com/visualpathit/vproapp/8-24-01-08_12-39/vproapp-8-24-01-08_12-39.war .
+# ARG instruction defines a variable that users can pass at build-time to the builder with the docker build command
+ARG WAR_FILE
 
-# Rename the artifact to ROOT.war to deploy it as the default web app
-RUN mv vproapp-5-24-01-08_02-53.war ROOT.war
+# Copy the WAR file from the build context to the current working directory
+COPY ${WAR_FILE} /usr/local/tomcat/webapps/ROOT.war
 
-# Expose the port the app runs on
+# Expose the default Tomcat port
 EXPOSE 8084
 
-# Start Tomcat
+# Command to run when the container starts
 CMD ["catalina.sh", "run"]
