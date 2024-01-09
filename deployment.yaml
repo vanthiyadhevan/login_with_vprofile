@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: vprofile-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: vprofile
+  template:
+    metadata:
+      labels:
+        app: vprofile
+    spec:
+      containers:
+      - name: vprofile
+        image: vanthiyadevan/vprofile:${BUILD_ID}-${BUILD_TIMESTAMP}
+        ports:
+        - containerPort: 8080
