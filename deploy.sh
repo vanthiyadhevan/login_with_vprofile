@@ -1,4 +1,4 @@
-!/bin/bash
+#!/bin/bash
 
 # Apply deployment
 kubectl apply -f deployment.yaml
