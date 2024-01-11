@@ -56,7 +56,7 @@
                             </ul>
                             <div class="navbar-collapse navbar-right collapse">
 	                            <ul class="nav navbar-nav">
-	                        	 <li><a href="${contextPath}/login">VICKY LOGIN</a></li>
+	                        	 <li><a href="${contextPath}/login">LOGIN</a></li>
 	                        	 <li><a href="${contextPath}/registration">SIGN UP</a></li>
 	                       	 	</ul>
                             </div>
