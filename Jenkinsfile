@@ -86,21 +86,21 @@ pipeline {
                 }
             }
         }
-        stage('Stop Previous Running Service') {
-            steps {
-                script {
-                    sh 'docker stop login'
-                }
-            }
-        }
-        stage('Remove stoped Service') {
-            steps {
-                script {
-                    sh 'docker rm login'
-                }
-            }
+        // stage('Stop Previous Running Service') {
+        //     steps {
+        //         script {
+        //             sh 'docker stop login'
+        //         }
+        //     }
+        // }
+        // stage('Remove stoped Service') {
+        //     steps {
+        //         script {
+        //             sh 'docker rm login'
+        //         }
+        //     }
             
-        }
+        // }
         stage('Run in local machine') {
             steps {
                 script {
