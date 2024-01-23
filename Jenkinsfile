@@ -5,7 +5,7 @@ pipeline {
         // Add your existing environment variables here
         NEXUS_VERSION = "nexus3"
         NEXUS_PROTOCOL = "http"
-        NEXUS_URL = "192.168.1.21:8081/"
+        NEXUS_URL = "192.168.1.25:8081/"
         NEXUS_REPOSITORY = "vprofile-docker"
         NEXUS_REPO_ID = "vprofile-docker"
         NEXUS_CREDENTIAL_ID = "nexus3"
