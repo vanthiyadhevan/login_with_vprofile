@@ -27,7 +27,7 @@
                         <div class="navbar-collapse collapse">
                             <ul class="nav navbar-nav">
                                 <li><a href="#technologies">TECHNOLOGIES</a></li>
-                                <li><a href="#about"> Vickey ABOUT</a></li>
+                                <li><a href="#about">ABOUT</a></li>
                                 <li><a href="#contact">CONTACT</a></li>
                                 <li><a href="#">BLOG</a></li>
                             </ul>
@@ -121,6 +121,7 @@
 	    <p><strong>Address:</strong>  Flat no: 205, 2nd Floor,NILGIRI Block,Aditya Encalve,Ameerpet, Hyderabad-16</p> 
 	    <p><strong>Ph No: </strong>  +91-9704455959,9618245689</p>
 		<p><strong>E-Mail ID :</strong>  visualpath999@gmail.com</p>
+    <p><strong>linked In</strong> www.linkedin.com/VANTHIYADEVAN</p>
   	</div>
    </div>
   
