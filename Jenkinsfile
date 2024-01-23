@@ -86,12 +86,20 @@ pipeline {
                 }
             }
         }
-        stage('Stop and Remove Privious Running Docker Container') {
+        stage('Stop Previous Running Service') {
             steps {
                 script {
-                    sh 'docker rm -f login'
+                    sh 'docker stop login'
                 }
             }
+        }
+        stage('Remove stoped Service') {
+            steps {
+                script {
+                    sh 'docker rm login'
+                }
+            }
+            
         }
         stage('Run in local machine') {
             steps {
