@@ -123,6 +123,7 @@
 		<p><strong>E-Mail ID :</strong>  visualpath999@gmail.com</p>
     <p><strong>linked In</strong> www.linkedin.com/VANTHIYADEVAN</p>
     <p><strong>Facebook In</strong> www.facebook.com/Vicky</p>
+    <p><strong>Instagram</strong>www.instagram.com/vickey.gandhi</p>
   	</div>
    </div>
   
