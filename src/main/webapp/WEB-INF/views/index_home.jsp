@@ -122,7 +122,7 @@
 	    <p><strong>Ph No: </strong>  +91-9704455959,9618245689</p>
 		<p><strong>E-Mail ID :</strong>  visualpath999@gmail.com</p>
     <p><strong>linked In</strong> www.linkedin.com/VANTHIYADEVAN</p>
-    <p><strong>linked In</strong> www.facebook.com/Vicky</p>
+    <p><strong>Facebook In</strong> www.facebook.com/Vicky</p>
   	</div>
    </div>
   
