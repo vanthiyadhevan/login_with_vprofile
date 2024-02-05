@@ -138,7 +138,7 @@
       <input class="w3-input w3-section" type="text" placeholder="Subject" required name="Subject">
       <input class="w3-input w3-section" type="text" placeholder="Comment" required name="Comment">
       <button class="w3-button w3-black w3-section" type="submit">
-        <i class="fa fa-paper-plane"></i> SEND MESSAGE
+        <i class="fa fa-paper-plane"></i> SEND MESSAGE TO ME
       </button>
     </form>
   </div>
