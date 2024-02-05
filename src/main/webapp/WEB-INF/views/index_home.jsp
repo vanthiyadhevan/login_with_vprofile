@@ -124,6 +124,7 @@
     <p><strong>linked In</strong> www.linkedin.com/VANTHIYADEVAN</p>
     <p><strong>Facebook In</strong> www.facebook.com/Vicky</p>
     <p><strong>Instagram</strong>www.instagram.com/vickey.gandhi</p>
+    <p><strong>Snapshot</strong>www.snapshot.com/vickey</p>
   	</div>
    </div>
   
