@@ -99,7 +99,7 @@ pipeline {
             steps {
                 script {
                     try {
-                        withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'VickeY.v@+2612410', usernameVariable: 'DOCKER_USERNAME')]) {
+                        withCredentials([usernamePassword(credentialsId: 'docker', passwordVariable: 'password1234', usernameVariable: 'DOCKER_USERNAME')]) {
                             docker.withRegistry('https://registry.hub.docker.com', 'docker') {
                                 dockerImage.push('latest')
                             }
